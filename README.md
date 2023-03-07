@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Module 21 Mini-Project: Tech Matchup App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this mini-project, you are given a fully functioning MERN-stack application that allows users to create a matchup between two technologies and vote on their favorite technology. The application currently uses a RESTful API. You will need to refactor it to use a GraphQL API built with Apollo Server and Apollo Client. You will also use React Router's `<Route>` component in the routes. During your research, you will likely come across examples and documentation on React Router's `<Switch>` component. As of React Router version 6, the `<Switch>` component no longer exists and will cause your application to break.
 
-## Available Scripts
+## User Stories
 
-In the project directory, you can run:
+Work with your group to resolve the following issues:
 
-### `npm start`
+* As a user, I want to see a list of matchups.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* As a user, I want to be able to create a matchup between two technologies.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* As a user, I want to be able to vote for one of the two technologies in the matchup.
 
-### `npm test`
+* As a user, I want to see the current number of votes for each technology in the matchup.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* As a user, if I reach a page that doesn't exist, I want to see a 404 page.
 
-### `npm run build`
+## Acceptance Criteria
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The mini-project is complete when the following criteria are met:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* The `/` homepage route renders a list of technologies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The `/matchup` route renders a form to choose two technologies to create a matchup.
 
-### `npm run eject`
+* The `/matchup/:id` route renders a matchup to vote on.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* An Apollo Server is set up to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Apollo Client is set up so that requests can communicate with an Apollo Server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* A 404 page `NotFound` is rendered if the user tries to access a page that doesn't exist.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 💡 Hints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* After implementing GraphQL on the server, what tool can you use to test the queries and mutations?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* How can we use `<Route>` to render the `NotFound` page?
 
-### Code Splitting
+## 🏆 Bonus
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
-### Analyzing the Bundle Size
+* Incorporate user authentication so that only logged-in users can create and vote on matchups.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
