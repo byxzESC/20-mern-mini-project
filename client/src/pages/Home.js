@@ -4,6 +4,7 @@ import { getAllMatchups } from '../utils/api';
 
 const Home = () => {
   const [matchupList, setMatchupList] = useState([]);
+  console.log(matchupList);
 
   useEffect(() => {
     const getMatchupList = async () => {
@@ -12,12 +13,15 @@ const Home = () => {
         if (!res.ok) {
           throw new Error('No list of matchups');
         }
+        console.log(res);
         const matchupList = await res.json();
+        console.log('matchupList =========================', matchupList)
         setMatchupList(matchupList);
       } catch (err) {
         console.error(err);
       }
     };
+
     getMatchupList();
   }, []);
 
@@ -29,6 +33,7 @@ const Home = () => {
       <div className="card-body m-5">
         <h2>Here is a list of matchups you can vote on:</h2>
         <ul className="square">
+
           {matchupList.map((matchup) => {
             return (
               <li key={matchup._id}>
@@ -38,6 +43,7 @@ const Home = () => {
               </li>
             );
           })}
+
         </ul>
       </div>
       <div className="card-footer text-center m-3">
